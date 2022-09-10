@@ -39,8 +39,8 @@ const ParticleBackground = () => {
                     quantity: 5,
                 },
                 repulse: {
-                    distance: 300,
-                    duration: 2.5,
+                    distance: 200,
+                    duration: 5,
                 },
             },
         },
@@ -65,7 +65,7 @@ const ParticleBackground = () => {
                     default: "bounce",
                 },
                 random: false,
-                speed: 2,
+                speed: 1,
                 straight: false,
             },
             number: {
