@@ -1,0 +1,106 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    line-height: 1.5;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.section-contact {
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+
+.section-contact .contact-card {
+    width: 100%;
+    max-width:fit-content;
+    margin: 0 auto;
+    background-color:black;
+    background-image:
+    radial-gradient(rgb(147, 75, 169), rgba(87, 35, 35, 0.2) 2px, transparent 40px),
+    radial-gradient(rgb(150, 103, 191), rgba(127, 0, 0, 0.15) 1px, transparent 30px),
+    radial-gradient(rgb(186, 105, 213), rgba(112, 6, 6, 0.1) 2px, transparent 40px),
+    radial-gradient(rgba(140, 86, 174, 0.4), rgba(98, 5, 5, 0.1) 2px, transparent 30px);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.74);
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-contact .contact-card .card-image {
+    /* background-color: red; */
+    margin-bottom: 20px;
+}
+
+.section-contact .contact-card .card-image img {
+    width: 200px;
+    height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+.section-contact .contact-card .card-image h2 {
+    color: #fff;
+    font-size: 50px;
+    margin: 0;
+    font-weight: 400;
+}
+
+.section-contact .contact-card .card-image h5 {
+    text-transform: uppercase;
+    color: #eeeeee;
+}
+
+
+/* ========= Card-text ============ */
+.section-contact .contact-card .card-text p {
+    font-size: 20px;
+    margin-bottom: 10px;
+    word-spacing: 5px;
+    color:#c887fd
+}
+
+
+@media screen and (min-width: 600px) {
+    .section-contact .contact-card {
+        flex-direction: row;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .section-contact .contact-card .card-image {
+        margin-bottom: 0px;
+        padding-right: 20px;
+    }
+}
+
+.move {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.down {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
