@@ -22,7 +22,7 @@ const initialState = { //using initialState to be able to clear all values such 
       imageUrl: '',
       box: {},
       route: 'signin', //Keeps track of where we are on page
-      isSignedIn: 'false', //Default as to keep newcomers locked out of site, it defaults to route 'signin' as on line 156
+      isSignedIn: false, //Default as to keep newcomers locked out of site, it defaults to route 'signin' as on line 156
       //The user state gets passed into register and signin as props and the user state keeps changing depending on the signin and register state changes
       user: {
         id: '',
