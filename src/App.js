@@ -135,8 +135,6 @@ class App extends Component {
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
         { route === 'home'
           ? <div>
-            <h1>i-Recognize</h1>
-            <h3>Face Recognition App</h3>
               <Logo />
               <RankCard
                 //Passing the name + #entries of the current user
