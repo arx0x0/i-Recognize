@@ -10,13 +10,11 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
       );
     } else { //For when the user wants to sign in or register, the onRouteChange is called
       return (
-        <nav>
-          <div><h1 className>i-Recognize</h1></div>
-        <div style={{display: 'flex', justifyContent: 'flex-end'}}>
+        <nav style={{display: 'flex', justifyContent: 'flex-end'}}>
           <p onClick={() => onRouteChange('signin')} className='f3 link dim black underline pa3 pointer'>Sign In</p>
           <p onClick={() => onRouteChange('register')} className='f3 link dim black underline pa3 pointer'>Register</p>
-        </div>
         </nav>
+      
       
       );
     }
