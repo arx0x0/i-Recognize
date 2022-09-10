@@ -54,7 +54,7 @@ class Register extends React.Component {
       <div>
 
         <div>
-        <h1 className='fw4 f2'>i-Recognize</h1>
+        <h1 className='fw5 f2'>i-Recognize</h1>
         <h2 className='f4 fw2'>Face Recognition App</h2>
         </div>
 
@@ -63,7 +63,7 @@ class Register extends React.Component {
         <main className="pa4 black-80">
           <div className="measure">
             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-              <legend className="f3 fw3 ph0 mh0">Register</legend>
+              <legend className="f3 fw4 ph0 mh0">Register</legend>
               <div className="mt3">
                 <label className="db fw6 lh-copy f6" htmlFor="name">Name</label>
                 <input
