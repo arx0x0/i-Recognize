@@ -8,7 +8,7 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
           <p onClick={() => onRouteChange('signout')} className='f3 link dim black underline pa3 pointer'>Sign Out</p>
         </nav>
       );
-    } else { //For when the user wants to sign in or register, the onRouteChange is called
+    } else { //For when the user wants to sign in or register, the onRouteChange is called, isSigned in is false, until user clicks sign in or register with right credentials
       return (
         <nav style={{display: 'flex', justifyContent: 'flex-end'}}>
           <p onClick={() => onRouteChange('signin')} className='f3 link dim black underline pa3 pointer'>Sign In</p>

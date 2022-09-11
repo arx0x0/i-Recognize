@@ -22,7 +22,7 @@ const initialState = { //Using initialState to be able to clear all values such 
       imageUrl: '',
       box: {},
       route: 'signin',
-      isSignedIn: false, //Default false to keep newcomers locked out, it defaults to route 'signin' as on line 155
+      isSignedIn: false, //Default false to keep newcomers locked out, it defaults to route 'signin' as on line 151
       //The user's state gets passed into register and signin as props and the user state keeps changing depending on the signin and register's state + control flow changes
       user: {
         id: '',
@@ -48,7 +48,6 @@ class App extends Component {
       joined: data.joined
     }})
   }
-
  
     //Returning an object containing the height and width of the image and setting boundary dimensions
   calculateFaceLocation = (data) => {
@@ -60,35 +59,32 @@ class App extends Component {
       leftCol: clarifaiFace.left_col * width,
       topRow: clarifaiFace.top_row * height,
       rightCol: width - (clarifaiFace.right_col * width),
-      bottomRow: height - (clarifaiFace.bottom_row * height)
+      bottomRow: height - (clarifaiFace.bottom_row * height),
     }
   }
 
-    //Below function uses what calculateFaceLocation returns and sets its state as box, which then gets passed into FaceRecognition as props and puts a border/box around the face (if not working, issue with API itself)
+    //Using what calculateFaceLocation returns and setting its state as box, which then gets passed into FaceRecognition as props and puts a border/box around the face (if not working, issue with API itself)
   displayFaceBox = (box) => {
     this.setState({box: box});
   }
 
-
   //Setting the current value to what the user enters for any components using onInputChange
-  onInputChange = (event) => { //getDerivedStateFromProps                         
+  onInputChange = (event) => {                 
     this.setState({input: event.target.value});
   }
 
     //On each ButtonSubmit set the state of imageUrl to current, use a promise to receive the clarifai api's face detect model + image input, then send the response object into calculateFaceLocation to detect where the face is and its width/height
-  onButtonSubmit = () => { //compdidmount
+  onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-    fetch('https://tranquil-sands-27874.herokuapp.com/imageurl', { //Server picks this up
+    fetch('https://tranquil-sands-27874.herokuapp.com/imageurl', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
-      //Just the client side sending the server id as raw JSON
       body: JSON.stringify({ //
         input: this.state.input 
       })
     })
-      .then(response => response.json()) //Retreiving server api response
-      .then(response => { //If promise is fulfilled and Clarifai gives us a response being the second argument aka image input
-        console.log('hi', response)
+      .then(response => response.json()) //Retrieving server api response
+      .then(response => { 
         if (response) { 
           fetch('https://tranquil-sands-27874.herokuapp.com/image', {
             method: 'put',
@@ -103,9 +99,9 @@ class App extends Component {
             .then(count => {
               this.setState(Object.assign(this.state.user, { entries: count}))
             })
-            .catch(console.log) //For error handling; place after every promise
+            .catch(console.log)
         }
-        //this.displayFaceBox runs the result of this.calculateFaceLocation(response) --> response being from image put route
+        //this.displayFaceBox runs the result of this.calculateFaceLocation(response) --> response being from imageurl post route
         this.displayFaceBox(this.calculateFaceLocation(response))
       })
       .catch(err => console.log(err));
@@ -113,7 +109,7 @@ class App extends Component {
 
 
   //Function to detect route changes and set state of isSignedIn appropriately which then signals the program to change the route to home if isSignedIn: true
-  onRouteChange = (route) => { //shouldcompupdate
+  onRouteChange = (route) => { 
     if (route === 'signout') {
       this.setState({isSignedIn: false})
     } else if (route === 'home') {
@@ -148,7 +144,6 @@ class App extends Component {
                 catchUrl={this.catchUrl}
               />
               <FaceRecognition box={box} imageUrl={imageUrl} />
-
       
             </div>
           : (
