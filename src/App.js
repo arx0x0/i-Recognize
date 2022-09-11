@@ -15,15 +15,15 @@ window.process = {
   }
 }
 
-//Important: Throughout the code, 'this' usually refers to an object generated in response to a user input, like this.calculateFaceLocation is referring 
+//Important: Throughout the code, 'this' usually refers to an object generated in response to a user input, like this.calculateFaceLocation is referring to the current user input and other methods may refer to other instant user properties
 
-const initialState = { //using initialState to be able to clear all values such as inputted images when another user signs in 
+const initialState = { //Using initialState to be able to clear all values such as inputted images when another user signs in 
   input: '',
       imageUrl: '',
       box: {},
       route: 'signin', //Keeps track of where we are on page
-      isSignedIn: false, //Default as to keep newcomers locked out of site, it defaults to route 'signin' as on line 156
-      //The user state gets passed into register and signin as props and the user state keeps changing depending on the signin and register state changes
+      isSignedIn: false, //Default to keep newcomers locked out, it defaults to route 'signin' as on line 155
+      //The user's state gets passed into register and signin as props and the user state keeps changing depending on the signin and register's state + control flow changes
       user: {
         id: '',
         name: '',
@@ -38,7 +38,7 @@ class App extends Component {
     this.state = initialState;
   }
 
-  //This function serves as a way to set the state with the approved user we receive from Signin or from register, data here is referring to the state data received from SignIn.js and Register.js, so loadUser allows us to alter the state of user in the constructor and be altered throughout the entire react app 
+  //loadUser allows us to set the state with the approved user we receive from Signin or from register, data here is referring to the state data received from SignIn.js and Register.js, so loadUser allows us to alter the state of user in the constructor and to be altered throughout the entire react app 
   loadUser = (data) => {
     this.setState({user: {
       id: data.id,
@@ -64,19 +64,19 @@ class App extends Component {
     }
   }
 
-    //Below function uses what calculateFaceLocation returns and sets its state as box, which then gets passed into FaceRecognition as props and puts a border/box around the face
+    //Below function uses what calculateFaceLocation returns and sets its state as box, which then gets passed into FaceRecognition as props and puts a border/box around the face (if not working, issue with API itself)
   displayFaceBox = (box) => {
     this.setState({box: box});
   }
 
 
   //Setting the current value to what the user enters for any components using onInputChange
-  onInputChange = (event) => {
+  onInputChange = (event) => { //getDerivedStateFromProps                         
     this.setState({input: event.target.value});
   }
 
     //On each ButtonSubmit set the state of imageUrl to current, use a promise to receive the clarifai api's face detect model + image input, then send the response object into calculateFaceLocation to detect where the face is and its width/height
-  onButtonSubmit = () => {
+  onButtonSubmit = () => { //compdidmount
     this.setState({imageUrl: this.state.input});
     fetch('https://tranquil-sands-27874.herokuapp.com/imageurl', { //Server picks this up
       method: 'post',
@@ -113,7 +113,7 @@ class App extends Component {
 
 
   //Function to detect route changes and set state of isSignedIn appropriately which then signals the program to change the route to home if isSignedIn: true
-  onRouteChange = (route) => {
+  onRouteChange = (route) => { //shouldcompupdate
     if (route === 'signout') {
       this.setState({isSignedIn: false})
     } else if (route === 'home') {
