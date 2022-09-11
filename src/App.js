@@ -21,8 +21,8 @@ const initialState = { //Using initialState to be able to clear all values such 
   input: '',
       imageUrl: '',
       box: {},
-      route: 'signin', //Keeps track of where we are on page
-      isSignedIn: false, //Default to keep newcomers locked out, it defaults to route 'signin' as on line 155
+      route: 'signin',
+      isSignedIn: false, //Default false to keep newcomers locked out, it defaults to route 'signin' as on line 155
       //The user's state gets passed into register and signin as props and the user state keeps changing depending on the signin and register's state + control flow changes
       user: {
         id: '',
