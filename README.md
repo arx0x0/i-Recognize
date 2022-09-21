@@ -22,4 +22,4 @@ https://i-recognize.herokuapp.com/
 ## Acknowledgments
 
 * Thank you to Andrei Neagoie and Zero to Mastery for teaching the basic functionality. 
-# Shout out to PurpleBooth for the README template
+* Shout out to PurpleBooth for the README template
