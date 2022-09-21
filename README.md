@@ -8,7 +8,7 @@ https://i-recognize.herokuapp.com/
 
 ## Built With
 
-* [React] - React-Native to create components and subcomponents with State, with promises to send user input to server
+* [React](https://reactjs.org/docs/getting-started.html) - React-Native to create components and subcomponents with State, with promises to send user input to server
 * [Node+Express](https://nodejs.org/en/) - Used to make a RESTful API and server
 * [PostgreSQL](https://www.postgresql.org/) - Database for user image entries and login/registration information
 * [Knex](https://knexjs.org/) - Used to connect server to database
