@@ -1,6 +1,6 @@
 # i-Recognize
 
-Fullstack Face Recognition Web Application, that upon an image url submit, detects and surrounds the face with a box, then creates a QR code, the amount of user entries, and an image of the user all in a unique ID card. Users must register and then sign in to use the app.
+Fullstack Face Recognition Web Application, that upon an image url submit, surrounds the face with a detection box, then creates a QR code, the amount of user entries, and an image of the user all in a unique ID card. Users must register and then sign in to use the app.
 
 ## Deployment
 
