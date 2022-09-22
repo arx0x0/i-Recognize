@@ -11,13 +11,15 @@ https://i-recognize.herokuapp.com/
 
 ## Built With
 
+### Front End
 * [React](https://reactjs.org/docs/getting-started.html) - React-Native to create components and subcomponents with State, with promises to send user input to server
+* [Tachyons](https://tachyons.io/) - For styling
+### Back End
 * [Clarifai](https://www.clarifai.com/) - Integrated the AI Face Detection Model to detect faces
 * [Node+Express](https://nodejs.org/en/) - Used to make a RESTful API and server
 * [PostgreSQL](https://www.postgresql.org/) - Database for user image entries and login/registration information
 * [Knex](https://knexjs.org/) - Used to connect server to database
 * [Bcrypt](https://www.npmjs.com/package/bcrypt) - npm package for hashing user passwords
-* [Tachyons](https://tachyons.io/) - For styling
 
 ## Authors
 
