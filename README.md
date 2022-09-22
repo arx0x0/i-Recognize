@@ -1,6 +1,6 @@
 # i-Recognize
 
-Fullstack Face Recognition Web Application, that upon an image url submit, surrounds the face with a detection box, then creates a QR code, the amount of user entries, and an image of the user all in a unique ID card. Users must register and then sign in to use the app. Note that if the box does not show up, there may be ongoing updates to the Clarifai API.
+Fullstack Face Recognition Web Application, that upon an image url submit, surrounds the entered face with a detection box, then creates a QR code, the amount of user entries, and an cropped image of the user, all in a unique ID card. Users must register and then sign in to use the app. Note that if the box does not show up, there may be ongoing updates to the Clarifai API.
 
 <img width="1440" alt="Screen Shot 2022-09-19 at 2 27 05 PM" src="https://user-images.githubusercontent.com/93293461/191563940-e2f52932-3d0e-4f4b-b2a7-c9c9412eda20.png">
 
