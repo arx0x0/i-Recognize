@@ -14,7 +14,7 @@ https://i-recognize.herokuapp.com/
 
 ### Front End
 * [React](https://reactjs.org/docs/getting-started.html) - React-Native to create components and subcomponents with State, with promises to send user input to server
-* [Tachyons](https://tachyons.io/) - For styling
+* [Tachyons](https://tachyons.io/) - Styling and UI related features
 ### Back End
 * [Clarifai](https://www.clarifai.com/) - Integrated the AI Face Detection Model to detect faces
 * [Node+Express](https://nodejs.org/en/) - Used to make a RESTful API and server
